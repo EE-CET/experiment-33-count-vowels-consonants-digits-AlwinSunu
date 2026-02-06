@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class CountCharacters {
-
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         String S = sc.nextLine();
-        
+
         int v = 0, c = 0, d = 0, sp = 0;
         String lower = S.toLowerCase();
 
@@ -20,7 +19,7 @@ public class CountCharacters {
                 } else {
                     c++;
                 }
-            } else if (!Character.isWhitespace(ch)) {
+            } else if (ch != ' ') {
                 sp++;
             }
         }
