@@ -1,25 +1,30 @@
 import java.util.Scanner;
 
-public class StringCounter { public static void main(String[] args) { Scanner sc = new Scanner(System.in); String s = sc.nextLine();
+public class CharFrequency {
 
-    int v = 0, c = 0, d = 0, sP = 0;
-    String lower = s.toLowerCase();
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        
+        int v = 0, c = 0, d = 0, sp = 0;
+        String lower = S.toLowerCase();
 
-    for (int i = 0; i < s.length(); i++) {
-        char ch = lower.charAt(i);
+        for (int i = 0; i < S.length(); i++) {
+            char ch = lower.charAt(i);
 
-        if (Character.isDigit(ch)) {
-            d++;
-        } else if (ch >= 'a' && ch <= 'z') {
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                v++;
-            } else {
-                c++;
+            if (Character.isDigit(ch)) {
+                d++;
+            } else if (ch >= 'a' && ch <= 'z') {
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    v++;
+                } else {
+                    c++;
+                }
+            } else if (!Character.isWhitespace(ch)) {
+                sp++;
             }
-        } else if (!Character.isWhitespace(ch)) {
-            sP++;
         }
+
+        System.out.println(v + " " + c + " " + d + " " + sp);
     }
-    System.out.println(v + " " + c + " " + d + " " + sP);
-}
 }
