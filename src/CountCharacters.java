@@ -3,12 +3,14 @@ import java.util.Scanner;
 public class CountCharacters {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        String S = sc.nextLine();
-
+        
+        if (!sc.hasNextLine()) return;
+        String s = sc.nextLine();
+        
         int v = 0, c = 0, d = 0, sp = 0;
-        String lower = S.toLowerCase();
+        String lower = s.toLowerCase();
 
-        for (int i = 0; i < S.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             char ch = lower.charAt(i);
 
             if (Character.isDigit(ch)) {
