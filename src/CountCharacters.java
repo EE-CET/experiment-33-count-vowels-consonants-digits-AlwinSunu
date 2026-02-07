@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class CountCharacters {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
@@ -10,11 +10,14 @@ public class Main {
         for (char ch : s.toCharArray()) {
             if ("aeiouAEIOU".indexOf(ch) != -1) {
                 vowels++;
-            } else if (Character.isLetter(ch)) {
+            } 
+            else if (Character.isLetter(ch)) {
                 consonants++;
-            } else if (Character.isDigit(ch)) {
+            } 
+            else if (Character.isDigit(ch)) {
                 digits++;
-            } else {
+            } 
+            else {
                 special++; // includes spaces
             }
         }
