@@ -21,7 +21,7 @@ public class CountCharacters {
                 } else {
                     c++;
                 }
-            } else if (ch != ' ') {
+            } else if (ch != ' ' && ch != '\t' && ch != '\n' && ch != '\r') {
                 sp++;
             }
         }
