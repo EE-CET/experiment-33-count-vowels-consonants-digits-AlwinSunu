@@ -1,31 +1,24 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class CountCharacters {
-    public static void main(String args[]) {
+public class Main {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-        if (!sc.hasNextLine()) return;
         String s = sc.nextLine();
-        
-        int v = 0, c = 0, d = 0, sp = 0;
-        String lower = s.toLowerCase();
 
-        for (int i = 0; i < s.length(); i++) {
-            char ch = lower.charAt(i);
+        int vowels = 0, consonants = 0, digits = 0, special = 0;
 
-            if (Character.isDigit(ch)) {
-                d++;
-            } else if (ch >= 'a' && ch <= 'z') {
-                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                    v++;
-                } else {
-                    c++;
-                }
-            } else if (!Character.isWhitespace(ch)) {
-                sp++;
+        for (char ch : s.toCharArray()) {
+            if ("aeiouAEIOU".indexOf(ch) != -1) {
+                vowels++;
+            } else if (Character.isLetter(ch)) {
+                consonants++;
+            } else if (Character.isDigit(ch)) {
+                digits++;
+            } else {
+                special++; // includes spaces
             }
         }
 
-        System.out.println(v + " " + c + " " + d + " " + sp);
+        System.out.println(vowels + " " + consonants + " " + digits + " " + special);
     }
 }
