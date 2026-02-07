@@ -21,7 +21,7 @@ public class CountCharacters {
                 } else {
                     c++;
                 }
-            } else if (ch != ' ' && ch != '\t' && ch != '\n' && ch != '\r') {
+            } else if (!Character.isWhitespace(ch)) {
                 sp++;
             }
         }
